@@ -12,6 +12,7 @@
     </properties>
     <modules>
         <module>annotations</module>
+        <module>problems</module>
     </modules>
     <dependencies>
         <dependency>

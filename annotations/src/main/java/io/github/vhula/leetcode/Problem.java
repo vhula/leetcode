@@ -7,14 +7,14 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CodeProblem {
+public @interface Problem {
 
     String name();
 
     String leetcodeUrl();
 
-    Topic topic();
+    Topic[] topics();
 
-    Complexity complexity();
+    ProblemComplexity complexity();
 
 }

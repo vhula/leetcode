@@ -1,17 +1,17 @@
 package io.github.vhula.leetcode;
 
-public enum Complexity {
+public enum ProblemComplexity {
     EASY(10),
     MEDIUM(20),
     HARD(30);
 
     private final int score;
 
-    Complexity(int score) {
+    ProblemComplexity(int score) {
         this.score = score;
     }
 
-    public boolean harderThan(Complexity other) {
+    public boolean harderThan(ProblemComplexity other) {
         return this.score > other.score;
     }
 }
