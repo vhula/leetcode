@@ -9,12 +9,12 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Problem {
 
-    String name();
+    String title();
 
     String leetcodeUrl();
 
     Topic[] topics();
 
-    ProblemComplexity complexity();
+    Difficulty difficulty();
 
 }

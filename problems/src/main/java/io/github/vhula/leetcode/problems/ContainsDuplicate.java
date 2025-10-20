@@ -7,10 +7,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Problem(
-        name = "217. Contains Duplicate",
+        title = "217. Contains Duplicate",
         leetcodeUrl = "https://leetcode.com/problems/contains-duplicate/",
         topics = {Topic.ARRAY, Topic.HASH_TABLE, Topic.SORTING},
-        complexity = ProblemComplexity.EASY
+        difficulty = Difficulty.EASY
 )
 public class ContainsDuplicate {
 
