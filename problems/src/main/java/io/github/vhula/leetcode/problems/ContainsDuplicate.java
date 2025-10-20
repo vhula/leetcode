@@ -15,8 +15,8 @@ import java.util.Set;
 public class ContainsDuplicate {
 
     @Solution(
-            timeComplexity = TimeComplexity.LINEAR,
-            spaceComplexity = SpaceComplexity.LINEAR,
+            timeComplexity = @TimeComplexity(Complexity.LINEAR),
+            spaceComplexity = @SpaceComplexity(Complexity.LINEAR),
             submission = @Submission(runtimeMs = 13, memoryMb = 57.8)
     )
     public boolean containsDuplicateWithHashSetForLoop(int[] nums) {
@@ -33,8 +33,8 @@ public class ContainsDuplicate {
     }
 
     @Solution(
-            timeComplexity = TimeComplexity.LINEAR,
-            spaceComplexity = SpaceComplexity.LINEAR,
+            timeComplexity = @TimeComplexity(Complexity.LINEAR),
+            spaceComplexity = @SpaceComplexity(Complexity.LINEAR),
             submission = @Submission(runtimeMs = 14, memoryMb = 57.8)
     )
     public boolean containsDuplicateWithHashSetForEachLoop(int[] nums) {
@@ -50,8 +50,8 @@ public class ContainsDuplicate {
     }
 
     @Solution(
-            timeComplexity = TimeComplexity.LINEAR,
-            spaceComplexity = SpaceComplexity.LINEAR,
+            timeComplexity = @TimeComplexity(Complexity.LINEAR),
+            spaceComplexity = @SpaceComplexity(Complexity.LINEAR),
             submission = @Submission(runtimeMs = 28, memoryMb = 61)
     )
     public boolean containsDuplicateWithHashSet2(int[] nums) {
@@ -59,8 +59,11 @@ public class ContainsDuplicate {
     }
 
     @Solution(
-            timeComplexity = TimeComplexity.LINEARITHMIC,
-            spaceComplexity = SpaceComplexity.CONSTANT,
+            timeComplexity = @TimeComplexity(Complexity.LINEARITHMIC),
+            spaceComplexity = {
+                    @SpaceComplexity(value = Complexity.CONSTANT, details = "if the sorting algorithm is in-place"),
+                    @SpaceComplexity(value = Complexity.LINEAR, details = "if the sorting algorithm is not in-place")
+            },
             submission = @Submission(runtimeMs = 21, memoryMb = 56.7)
     )
     public boolean containsDuplicateWithSorting(int[] nums) {
@@ -74,8 +77,8 @@ public class ContainsDuplicate {
     }
 
     @Solution(
-            timeComplexity = TimeComplexity.QUADRATIC,
-            spaceComplexity = SpaceComplexity.CONSTANT,
+            timeComplexity = @TimeComplexity(Complexity.QUADRATIC),
+            spaceComplexity = @SpaceComplexity(Complexity.CONSTANT),
             submission = @Submission(failed = true, failureReason = "Time Limit Exceeded")
     )
     public boolean containsDuplicateQuadratic(int[] nums) {

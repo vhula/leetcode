@@ -1,11 +1,12 @@
 package io.github.vhula.leetcode.problems;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class ContainsDuplicateTest {
 
@@ -24,17 +25,17 @@ class ContainsDuplicateTest {
     public void testContainsDuplicate(int[] nums, boolean expected) {
         ContainsDuplicate solution = new ContainsDuplicate();
         if (expected) {
-            Assertions.assertTrue(solution.containsDuplicateQuadratic(nums));
-            Assertions.assertTrue(solution.containsDuplicateWithSorting(nums));
-            Assertions.assertTrue(solution.containsDuplicateWithHashSetForEachLoop(nums));
-            Assertions.assertTrue(solution.containsDuplicateWithHashSetForLoop(nums));
-            Assertions.assertTrue(solution.containsDuplicateWithHashSet2(nums));
+            assertTrue(solution.containsDuplicateQuadratic(nums));
+            assertTrue(solution.containsDuplicateWithSorting(nums));
+            assertTrue(solution.containsDuplicateWithHashSetForEachLoop(nums));
+            assertTrue(solution.containsDuplicateWithHashSetForLoop(nums));
+            assertTrue(solution.containsDuplicateWithHashSet2(nums));
         } else {
-            Assertions.assertFalse(solution.containsDuplicateQuadratic(nums));
-            Assertions.assertFalse(solution.containsDuplicateWithSorting(nums));
-            Assertions.assertFalse(solution.containsDuplicateWithHashSetForEachLoop(nums));
-            Assertions.assertFalse(solution.containsDuplicateWithHashSetForLoop(nums));
-            Assertions.assertFalse(solution.containsDuplicateWithHashSet2(nums));
+            assertFalse(solution.containsDuplicateQuadratic(nums));
+            assertFalse(solution.containsDuplicateWithSorting(nums));
+            assertFalse(solution.containsDuplicateWithHashSetForEachLoop(nums));
+            assertFalse(solution.containsDuplicateWithHashSetForLoop(nums));
+            assertFalse(solution.containsDuplicateWithHashSet2(nums));
         }
     }
 
