@@ -1,0 +1,33 @@
+package io.github.vhula.leetcode;
+
+public enum Topic {
+
+    ARRAY,
+    STRING,
+    LINKED_LIST,
+    TREE,
+    GRAPH,
+    DYNAMIC_PROGRAMMING,
+    BACKTRACKING,
+    SORTING,
+    SEARCHING,
+    MATHEMATICS,
+    BIT_MANIPULATION,
+    STACK,
+    QUEUE,
+    HEAP,
+    HASH_TABLE,
+    GREEDY,
+    DIVIDE_AND_CONQUER,
+    TWO_POINTERS,
+    SLIDING_WINDOW,
+    RECURSION,
+    UNION_FIND,
+    TRIE,
+    DESIGN,
+    SIMULATION,
+    GEOMETRY,
+    INTERVALS,
+    RANDOMIZED
+
+}
