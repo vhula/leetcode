@@ -11,7 +11,7 @@ public enum Complexity {
     CUBIC("O(n^3)"),
     EXPONENTIAL("O(2^n)"),
     FACTORIAL("O(n!)"),
-    UNKNOWN("Unknown");
+    CUSTOM("Custom");
 
     private final String notation;
 
