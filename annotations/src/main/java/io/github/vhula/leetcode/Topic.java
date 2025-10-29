@@ -28,6 +28,9 @@ public enum Topic {
     SIMULATION,
     GEOMETRY,
     INTERVALS,
+    BUCKET_SORT,
+    COUNTING,
+    QUICK_SELECT,
     RANDOMIZED
 
 }

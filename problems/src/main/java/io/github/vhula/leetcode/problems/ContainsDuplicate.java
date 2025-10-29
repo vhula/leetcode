@@ -59,7 +59,7 @@ public class ContainsDuplicate {
     }
 
     @Solution(
-            timeComplexity = @TimeComplexity(Complexity.LINEARITHMIC),
+            timeComplexity = @TimeComplexity(Complexity.N_LOG_N),
             spaceComplexity = {
                     @SpaceComplexity(value = Complexity.CONSTANT, details = "if the sorting algorithm is in-place"),
                     @SpaceComplexity(value = Complexity.LINEAR, details = "if the sorting algorithm is not in-place")

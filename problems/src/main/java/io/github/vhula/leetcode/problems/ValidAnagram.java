@@ -41,7 +41,7 @@ public class ValidAnagram {
     }
 
     @Solution(
-            timeComplexity = @TimeComplexity(Complexity.LINEAR_TWO),
+            timeComplexity = @TimeComplexity(Complexity.LINEAR_N_PLUS_M),
             spaceComplexity = @SpaceComplexity(Complexity.CONSTANT),
             submission = @Submission(runtimeMs = 26, memoryMb = 44.54)
     )
@@ -62,7 +62,7 @@ public class ValidAnagram {
     }
 
     @Solution(
-            timeComplexity = @TimeComplexity(Complexity.LINEARITHMIC_TWO),
+            timeComplexity = @TimeComplexity(Complexity.N_LOG_N_PLUS_M_LOG_M),
             spaceComplexity = @SpaceComplexity(Complexity.CONSTANT),
             submission = @Submission(runtimeMs = 3, memoryMb = 44.34)
     )
