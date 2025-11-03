@@ -13,6 +13,7 @@
         <java.version>25</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <error-prone.version>2.42.0</error-prone.version>
+        <spotless-maven-plugin.goal>apply</spotless-maven-plugin.goal>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -105,6 +106,14 @@
                             </sortPom>
                         </pom>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>${spotless-maven-plugin.goal}</goal>
+                            </goals>
+                            <phase>validate</phase>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -123,4 +132,18 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>github-actions-build</id>
+            <activation>
+                <property>
+                    <name>build.env</name>
+                    <value>github.actions</value>
+                </property>
+            </activation>
+            <properties>
+                <spotless-maven-plugin.goal>check</spotless-maven-plugin.goal>
+            </properties>
+        </profile>
+    </profiles>
 </project>
