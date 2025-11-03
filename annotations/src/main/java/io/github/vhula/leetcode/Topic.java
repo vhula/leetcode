@@ -31,6 +31,6 @@ public enum Topic {
     BUCKET_SORT,
     COUNTING,
     QUICK_SELECT,
+    PREFIX_SUM,
     RANDOMIZED
-
 }
