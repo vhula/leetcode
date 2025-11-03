@@ -1,7 +1,9 @@
 package io.github.vhula.leetcode;
 
 public enum Difficulty {
-  EASY(10), MEDIUM(20), HARD(30);
+  EASY(10),
+  MEDIUM(20),
+  HARD(30);
 
   private final int score;
 
