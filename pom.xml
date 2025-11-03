@@ -85,6 +85,12 @@
                                 <nrOfIndentSpace>4</nrOfIndentSpace>
                             </sortPom>
                         </pom>
+                        <java>
+                            <removeUnusedImports/>
+                            <eclipse>
+                                <file>code-style.xml</file>
+                            </eclipse>
+                        </java>
                     </configuration>
                     <executions>
                         <execution>
