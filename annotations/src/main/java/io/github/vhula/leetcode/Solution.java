@@ -1,11 +1,11 @@
 package io.github.vhula.leetcode;
 
 public @interface Solution {
-  String description() default "";
+    String description() default "";
 
-  TimeComplexity[] timeComplexity() default @TimeComplexity;
+    TimeComplexity[] timeComplexity() default @TimeComplexity;
 
-  SpaceComplexity[] spaceComplexity() default @SpaceComplexity;
+    SpaceComplexity[] spaceComplexity() default @SpaceComplexity;
 
-  Submission submission() default @Submission(runtimeMs = -1, memoryMb = -1.0);
+    Submission submission() default @Submission(runtimeMs = -1, memoryMb = -1.0);
 }
