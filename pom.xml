@@ -14,50 +14,30 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <error-prone.version>2.42.0</error-prone.version>
         <spotless-maven-plugin.goal>apply</spotless-maven-plugin.goal>
+        <junit.version>6.0.1</junit.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+        <spotless-maven-plugin.version>3.0.0</spotless-maven-plugin.version>
+        <maven-dependency-plugin.version>3.9.0</maven-dependency-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>6.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>6.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-params</artifactId>
-                <version>6.0.0</version>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.14.1</version>
+                    <version>${maven-compiler-plugin.version}</version>
                     <configuration>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
@@ -91,16 +71,16 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.4</version>
+                    <version>${maven-surefire-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>com.diffplug.spotless</groupId>
                     <artifactId>spotless-maven-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>${spotless-maven-plugin.version}</version>
                     <configuration>
                         <pom>
                             <sortPom>
-                                <encoding>UTF-8</encoding>
+                                <encoding>${project.build.sourceEncoding}</encoding>
                                 <lineSeparator>${line.separator}</lineSeparator>
                                 <nrOfIndentSpace>4</nrOfIndentSpace>
                             </sortPom>
@@ -112,6 +92,33 @@
                                 <goal>${spotless-maven-plugin.goal}</goal>
                             </goals>
                             <phase>validate</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>analyze-dep-mgt</id>
+                            <goals>
+                                <goal>analyze-dep-mgt</goal>
+                            </goals>
+                            <phase>validate</phase>
+                            <configuration>
+                                <ignoreDirect>false</ignoreDirect>
+                                <failBuild>true</failBuild>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>analyze</id>
+                            <goals>
+                                <goal>analyze-only</goal>
+                            </goals>
+                            <configuration>
+                                <failOnWarning>true</failOnWarning>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
@@ -129,6 +136,10 @@
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
