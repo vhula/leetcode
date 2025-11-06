@@ -10,15 +10,15 @@
         <module>problems</module>
     </modules>
     <properties>
-        <java.version>25</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <error-prone.version>2.42.0</error-prone.version>
-        <spotless-maven-plugin.goal>apply</spotless-maven-plugin.goal>
+        <java.version>25</java.version>
         <junit.version>6.0.1</junit.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
-        <spotless-maven-plugin.version>3.0.0</spotless-maven-plugin.version>
         <maven-dependency-plugin.version>3.9.0</maven-dependency-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spotless-maven-plugin.goal>apply</spotless-maven-plugin.goal>
+        <spotless-maven-plugin.version>3.0.0</spotless-maven-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -83,6 +83,7 @@
                                 <encoding>${project.build.sourceEncoding}</encoding>
                                 <lineSeparator>${line.separator}</lineSeparator>
                                 <nrOfIndentSpace>4</nrOfIndentSpace>
+                                <sortProperties>true</sortProperties>
                             </sortPom>
                         </pom>
                         <java>
@@ -111,7 +112,7 @@
                             <goals>
                                 <goal>analyze-dep-mgt</goal>
                             </goals>
-                            <phase>validate</phase>
+                            <phase>test</phase>
                             <configuration>
                                 <ignoreDirect>false</ignoreDirect>
                                 <failBuild>true</failBuild>
@@ -122,6 +123,7 @@
                             <goals>
                                 <goal>analyze-only</goal>
                             </goals>
+                            <phase>test</phase>
                             <configuration>
                                 <failOnWarning>true</failOnWarning>
                             </configuration>
